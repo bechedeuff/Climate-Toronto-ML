@@ -1,7 +1,3 @@
-from calendar import c
-from pyexpat.errors import XML_ERROR_NOT_STANDALONE
-from turtle import color
-from venv import create
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
