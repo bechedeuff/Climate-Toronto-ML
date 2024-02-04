@@ -1,9 +1,18 @@
 pandas
 numpy
-matplotlib
-seaborn
 scikit-learn
 scipy
-catboost
-xgboost
+regex
+chardet
+openpyxl
 notebook
+matplotlib
+seaborn
+ngboost
+xgboost
+scikit-fuzzy
+bayesian-optimization
+beautifulsoup4
+#tqdm
+shap
+-e .

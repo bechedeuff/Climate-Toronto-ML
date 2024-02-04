@@ -13,9 +13,7 @@ def import_climate_data():
     and drop unnecessary columns.
     """
     all_files = glob(file_path)
-    df = pd.concat(
-        (pd.read_csv(f, index_col="Date/Time", parse_dates=True) for f in all_files)
-    )
+    df = pd.concat((pd.read_csv(f, index_col="Date/Time", parse_dates=True) for f in all_files))
     df = df.dropna(axis=1, how="all")
     df = df.drop(df.columns[df.columns.str.contains("Flag")], axis=1)
     df = df.drop(

@@ -8,19 +8,26 @@ and be in the folder where the requirements.txt is located in your cmd.
 """
 
 
+var = "-e ."
+
+
 def get_requirements(file_path: str) -> List[str]:
     """
-    function returns the requirements list from a file.
+    this function will return the list of requirements
     """
-    try:
-        with open(file_path, "r") as file_obj:
-            requirements = [line.strip() for line in file_obj.readlines()]
-        return requirements
-    except FileNotFoundError:
-        raise FileNotFoundError(f"File '{file_path}' not found.")
+    requirements = []
+    with open(file_path) as file_obj:
+        requirements = file_obj.readlines()
+        requirements = [req.replace("\n", "") for req in requirements]
+
+        if var in requirements:
+            requirements.remove(var)
+
+    return requirements
 
 
 setup(
+    name="Toronto climate forecast",
     packages=find_packages(),
     install_requires=get_requirements("requirements.txt"),
 )
